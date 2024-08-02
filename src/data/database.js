@@ -52,24 +52,6 @@ async function initDatabase(db) {
   let sql = fs.readFileSync(initScript).toString();
   await db.exec(sql);
 
-  console.log(`Initializing database using init script ${process.env.DB_INIT_User}`);
-  sql = fs.readFileSync(process.env.DB_INIT_User).toString();
-  await db.exec(sql);
-
-  console.log(`Initializing database using init script ${process.env.DB_INIT_Article}`);
-  sql = fs.readFileSync(process.env.DB_INIT_Article).toString();
-  await db.exec(sql);
-
-  console.log(`Initializing database using init script ${process.env.DB_INIT_Comment}`);
-  sql = fs.readFileSync(process.env.DB_INIT_Comment).toString();
-  await db.exec(sql);
-
-  console.log(`Initializing database using init script ${process.env.DB_INIT_User_likes_Article}`);
-  sql = fs.readFileSync(process.env.DB_INIT_User_likes_Article).toString();
-  await db.exec(sql);
-
-
-
   console.log("Database initialized successfully!");
 }
 
